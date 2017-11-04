@@ -15,7 +15,7 @@ export default {
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         commit('ADD_SCORES', {
-          num: 10
+          num: 100
         })
         resolve(1234)
       }, 1000)

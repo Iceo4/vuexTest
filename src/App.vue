@@ -3,13 +3,19 @@
     <router-view/>
   </div>
 </template>
-
 <script>
 export default {
-  
-}
-</script>
+  name: 'App',
+  data() {
+    return {
+     
+    }
+  },
 
+}
+
+</script>
 <style scoped>
+
 
 </style>
