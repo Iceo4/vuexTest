@@ -15,7 +15,7 @@ export default {
 }
 
 </script>
-<style scoped>
-
+<style  >
+@import './style/common.less'
 
 </style>

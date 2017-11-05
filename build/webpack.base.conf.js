@@ -61,7 +61,17 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
-      }
+      },
+      {
+        test: /\.less$/,
+        loader:"style-loader!css-loader!less-loader",
+        options: vueLoaderConfig
+      },
+      {
+        test: /\.css$/,
+        loader:"style-loader!css-loader!less-loader",
+        options: vueLoaderConfig
+      },
     ]
   }
 }
