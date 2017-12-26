@@ -4,6 +4,7 @@
   </div>
 </template>
 <script>
+
 export default {
   name: 'App',
   data() {
@@ -11,11 +12,14 @@ export default {
      
     }
   },
+  computed:{
+  	
+  }
 
 }
 
 </script>
-<style  >
-@import './style/common.less'
 
+<style  >
+@import './style/common.less';
 </style>
