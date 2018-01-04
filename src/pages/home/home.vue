@@ -1,19 +1,20 @@
 <template>
 	<div>
-		<itemcontainer/>
+		<!-- <itemcontainer/> -->
 	</div>
 </template>
 <script>
-import itemcontainer from '../../components/itemcontianer'
+import itemcontainer from '../../components/itemcontianer';
+
 export default {
 	name: 'home',
   	data () {
     	return {
     	}
   	},
-  	components: {
-  		itemcontainer
-  	},
+  	// components: {
+  	// 	itemcontainer
+  	// },
 }
 </script>
 
