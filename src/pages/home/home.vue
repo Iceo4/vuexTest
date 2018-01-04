@@ -1,9 +1,10 @@
 <template>
 	<div>
-		<router-link to="/item">首页</router-link>
+		<itemcontainer/>
 	</div>
 </template>
 <script>
+import itemcontainer from '../../components/itemcontianer'
 export default {
 	name: 'home',
   	data () {
@@ -11,7 +12,7 @@ export default {
     	}
   	},
   	components: {
-  		
+  		itemcontainer
   	},
 }
 </script>
