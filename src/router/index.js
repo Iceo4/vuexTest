@@ -6,6 +6,7 @@ import Score from '@/pages/score/score'
 Vue.use(Router)
 
 export default new Router({
+  mode:'history',
   routes: [{
     path: '/',
     name: 'Home',

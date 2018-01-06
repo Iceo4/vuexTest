@@ -1,10 +1,8 @@
 <template>
   <section>
-    <header>
       <header class="top_tips">
         <span class="num_tip" v-if="fatherComponent == 'home'">{{level}}</span>
         <span class="num_tip" v-if="fatherComponent == 'item'">题目{{itemNum}}</span>
-      </header>
     </header>
     <div v-if="fatherComponent == 'home' ">
       <div class="home_logo item_container_style"></div>
@@ -15,9 +13,9 @@
         <div class="item_list_container">
           <header class="item_title">{{itemDetail[itemNum-1].title}}</header>
           <ul>
-            <li v-for="(item, index) in itemDetail[itemNum-1].content" :key="index" @click="choosed(index)" class="item_list">
+            <li v-for="(item, index) in itemDetail[itemNum-1].content" :key="index" @click="choosed(index,item.id)" class="item_list">
               <span class="option_style" v-bind:class="{'has_choosed':choosedNum==index}">{{chooseType(index)}}</span>
-              <span class="option_detail">{{item}}</span>
+              <span class="option_detail">{{item.text}}</span>
             </li>
           </ul>
         </div>
@@ -35,13 +33,15 @@ export default {
   data() {
     return {
       itemId: null,
-      choosedNum: null
+      choosedNum: null,
+      choosedId:null
     };
   },
   computed: mapState(["itemNum", "level", "itemDetail"]),
   methods: {
-    choosed: function(type) {
+    choosed: function(type,id) {
       this.choosedNum = type;
+      this.choosedId = id;
     },
     chooseType: function(type) {
       switch (type) {
@@ -61,12 +61,16 @@ export default {
         return;
       }
       this.choosedNum = null;
-      this.$store.dispatch("addNum");
+      this.$store.dispatch("addNum",this.choosedId);
     },
     submitAnswer: function() {
-      if (this.choosedNum !== null) {
-        this.$router.push("score");
+      
+      if (this.choosedNum == null) {
+         alert("请选择答案");
+        return;
+        
       }
+      console.log(this.$store.state.answerid,11)
     }
   }
 };
