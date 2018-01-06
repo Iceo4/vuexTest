@@ -1,38 +1,20 @@
 <template>
   	<div>
-    	<router-link to="/score">答题页</router-link>
-    	<div>{{ $store.state.scores }}</div>
-    	<div @click="addScore">增加</div>
+    	<itemcontainer father-component="item"></itemcontainer>
   	</div>
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import itemcontainer from '../../components/itemcontainer'
+
 
 export default {
 	name: 'item',
-  	data () {
-    	return {
-     
-    	}
-  	},
   	components: {
-   		
+   		itemcontainer
   	},
-  	computed: {
-
-  	},
-	methods: mapActions([
-	    'addScore',
-	]),
-	created () {
-	    this.$store.dispatch('getData').then((res) => {
-	    	console.log(res)
-	    }).catch((error) => {
-	    	console.log(error)
-	    })
-	}
 }
+
 </script>
 
 <style>

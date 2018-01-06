@@ -1,11 +1,9 @@
 export default {
-  addScore({
+  addNum({
     commit
   }) {
     if (true) {
-      commit('ADD_SCORES', {
-        num: 1
-      })
+      commit('ADD_ITEMNUM')
     }
   },
 
